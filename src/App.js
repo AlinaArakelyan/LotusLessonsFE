@@ -1,26 +1,34 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ChakraContainer from './components/ChakraContainer.js';
+import Welcome from './components/Welcome.js';
+import { Route, Switch } from 'react-router'
+import NavBar from './components/Nav.js'
+import { removeUser } from './redux/actions'
+import { connect } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <Welcome />
+        <ChakraContainer />
+        {/* <Switch>
+          <Route path="/" render={() => <Welcome onClick={this.props.removeUser} />} />
+          <Route path="/Chakras" render={() => <ChakraContainer />} />
+        </Switch> */}
+      </div>
+    )
+  }; 
 }
 
-export default App;
+
+const getInfo = (state) => {
+  return {
+    state
+  }
+}
+
+export default connect(getInfo, {removeUser})(App)
