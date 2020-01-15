@@ -9,6 +9,18 @@ class QuizForm extends React.Component{
         answer: 0
     }
 
+    componentDidUpdate = () => {
+      
+            this.handleChange = (evt) => {
+                console.log(this.state)
+                this.setState({
+                    question: evt.target.name,
+                    answer: evt.target.value
+                })
+            }
+        }
+    
+
     handleChange = (evt) => {
         console.log(this.state)
         this.setState({
@@ -31,31 +43,31 @@ class QuizForm extends React.Component{
                     type="radio"
                     name={this.props.question.id}
                     value="0"
-                    // checked={0}
+                    // checked={this.state.answer === 0 ? true : false}
                 />
                     <input onChange={this.handleChange}
                         type="radio"
                         name={this.props.question.id}
                         value="25"
-                        // checked={25}
+                        // checked={this.state.answer === 25}
                          />
                 <input onChange={this.handleChange}
                     type="radio"
                     name={this.props.question.id}
                     value="50"
-                    // checked={50}
+                    // checked={this.state.answer === 50}
                          />
                     <input onChange={this.handleChange}
                         type="radio"
                         name={this.props.question.id}
                         value="75"
-                        // checked={75}
+                        // checked={this.state.answer === 75}
                          />
                 <input onChange={this.handleChange}
                     type="radio"
                     name={this.props.question.id}
                     value="100"
-                    // checked={100}
+                    // checked={this.state.answer === 100}
                      />
                 </div>
         )

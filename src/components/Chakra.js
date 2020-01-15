@@ -3,7 +3,7 @@ import React from 'react';
 const Chakra = ({ chakra }) => (
     
     <div>
-        <h4>Chakra: {chakra.name} </h4> <img src={chakra.symbol} className="symbol"></img> {chakra.description}
+        <h4>Chakra: {chakra.name} </h4> <img src={chakra.symbol} className="App-logo"></img> {chakra.description}
     </div>
 )
 

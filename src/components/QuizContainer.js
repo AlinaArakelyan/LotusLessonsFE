@@ -11,6 +11,7 @@ class QuizContainer extends React.Component{
         this.props.getAllQuestions()
     }
 
+
     render() {
         console.log(this.props)
         return (
