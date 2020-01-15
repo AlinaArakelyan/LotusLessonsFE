@@ -9,20 +9,19 @@ class QuizForm extends React.Component{
         answer: 0
     }
 
-    componentDidUpdate = () => {
+    // componentDidUpdate = () => {
       
-            this.handleChange = (evt) => {
-                console.log(this.state)
-                this.setState({
-                    question: evt.target.name,
-                    answer: evt.target.value
-                })
-            }
-        }
+    //         this.handleChange = (evt) => {
+    //             console.log(this.state)
+    //             this.setState({
+    //                 question: evt.target.name,
+    //                 answer: evt.target.value
+    //             })
+    //         }
+    //     }
     
 
     handleChange = (evt) => {
-        console.log(this.state)
         this.setState({
             question: evt.target.name,
             answer: evt.target.value
@@ -36,10 +35,11 @@ class QuizForm extends React.Component{
     }
     
     render() {
+        console.log(this.state)
         return (
             <div >
                 <label htmlFor="question">{this.props.question.question}</label>
-                <input onChange={this.handleChange}
+                <input onClick={this.handleChange}
                     type="radio"
                     name={this.props.question.id}
                     value="0"
