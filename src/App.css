@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.quiz{
+  background:white;
+  border: black 2px solid;
+  width:1000px;
+  height:550px;
+  padding: 50px;
+  overflow: auto;
+  margin: 20px auto;
+  background-color: rgba(255,255,255, 0.6);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.symbol{
+  top:50%;
+  left:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}

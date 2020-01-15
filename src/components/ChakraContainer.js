@@ -1,19 +1,15 @@
 import React from 'react';
 import Chakra from './Chakra';
 import { connect } from 'react-redux';
-import { setChakras } from "../redux/actions"
+import { getAllChakras } from "../redux/actions"
 
 
 class ChakraContainer extends React.Component{
 
     componentDidMount() {
-        fetch(`http://localhost:3000/chakras`)
-        .then(resp => resp.json())
-            .then(arrayOfChakras => {
-            this.props.setChakras(arrayOfChakras)
-        })
+        this.props.getAllChakras()
     }
-
+    
     render() {
         return (
         <div>
@@ -26,11 +22,10 @@ class ChakraContainer extends React.Component{
 }
 
 const getInfo = (state) => {
-    console.log(state)
     return {
         chakras: state.allChakras.chakras
     }
 }
 
 
-export default connect(getInfo, { setChakras })(ChakraContainer)
+export default connect(getInfo, { getAllChakras })(ChakraContainer)

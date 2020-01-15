@@ -16,6 +16,7 @@ class WelcomeForm extends React.Component{
       }
     
     handleSubmit = (evt) => {
+        console.log(this.props.allQuestions)
         evt.preventDefault()
         this.props.addUser(this.state)
       }
@@ -24,7 +25,7 @@ class WelcomeForm extends React.Component{
     render() {
         return (
             <div>
-                <h1>Enter Name here to begin</h1>
+                <h1>Enter Your Name Below to Begin</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="user">Your Name</label>
                     <input
@@ -44,10 +45,5 @@ class WelcomeForm extends React.Component{
 }
 
 
-// const addUser = (dispatch) => {
-//     return {
-//         addUser: (newUser) => {dispatch({type: "ADD_USER", payload: newUser})}
-//     }
-// }
 
 export default connect(null, { addUser })(WelcomeForm)

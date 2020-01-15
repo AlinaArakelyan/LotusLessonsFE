@@ -15,6 +15,11 @@ const initialState = {
         return {
           ...state,
           user: []
+        }` `
+      
+      case "UPDATE_USER":
+        return {
+          user: "this will update the user"
         }
 
       default:

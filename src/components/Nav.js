@@ -5,9 +5,11 @@ class Nav extends Component {
     render() {
         return (
           <div className="">
-            <Link to="/">Start Quiz</Link>
+            <Link to="/">Home</Link>
               |
-            <Link to="/Chakras">Chakra Info</Link>
+            <Link to="/chakras">Chakra Info</Link>
+              |
+            <Link to="/Quiz">Quiz</Link>
           </div>
         );
       }
