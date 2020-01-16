@@ -19,11 +19,25 @@ export const getAllQuestions = () => {
   } 
 }
 
-export const updateQuestions = () => {
-  return (dispatch) => {
 
-  }
-}
+
+// export const updateQuestions = () => {
+//   return (dispatch) => {
+//     fetch(`http://localhost:3000/questions/${id}`, {
+//       method:'PATCH',
+//      headers: { 
+//          'Content-type': 'application/json',
+//          'accept': 'application/json'
+//      },
+//       body: JSON.stringify({
+//       })
+//     })
+//     .then(resp => resp.json())
+//     .then(json_resp => console.log(json_resp))
+//   }
+// }
+
+
 
 
 export const addUser = (newUser) => {

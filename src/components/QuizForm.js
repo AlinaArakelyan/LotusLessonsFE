@@ -1,78 +1,59 @@
 import React from 'react';
 
 
-class QuizForm extends React.Component{
-
-
-    state = {
-        question: " ",
-        answer: 0
-    }
-
-    // componentDidUpdate = () => {
-      
-    //         this.handleChange = (evt) => {
-    //             console.log(this.state)
-    //             this.setState({
-    //                 question: evt.target.name,
-    //                 answer: evt.target.value
-    //             })
-    //         }
-    //     }
-    
-
-    handleChange = (evt) => {
-        this.setState({
-            question: evt.target.name,
-            answer: evt.target.value
-        })
-      }
-    
-    handleSubmit = (evt) => {
-        // evt.preventDefault()
-        this.props.updateQuestions(this.state)
-        evt.reset()
-    }
+class QuizForm extends React.Component {
     
     render() {
-        console.log(this.state)
         return (
-            <div >
+            <form id="quiz-form" onSubmit={(evt) => this.props.handleSubmit(evt, this.state)}>
                 <label htmlFor="question">{this.props.question.question}</label>
-                <input onClick={this.handleChange}
+                <input onChange={this.props.handleChange}
                     type="radio"
                     name={this.props.question.id}
-                    value="0"
-                    // checked={this.state.answer === 0 ? true : false}
+                    value={0}
                 />
-                    <input onChange={this.handleChange}
-                        type="radio"
-                        name={this.props.question.id}
-                        value="25"
-                        // checked={this.state.answer === 25}
-                         />
-                <input onChange={this.handleChange}
+                <input onChange={this.props.handleChange}
                     type="radio"
                     name={this.props.question.id}
-                    value="50"
-                    // checked={this.state.answer === 50}
-                         />
-                    <input onChange={this.handleChange}
-                        type="radio"
-                        name={this.props.question.id}
-                        value="75"
-                        // checked={this.state.answer === 75}
-                         />
-                <input onChange={this.handleChange}
+                    value={25}
+                />
+                <input onChange={this.props.handleChange}
                     type="radio"
                     name={this.props.question.id}
-                    value="100"
-                    // checked={this.state.answer === 100}
-                     />
-                </div>
+                    value={50}
+                />
+                <input onChange={this.props.handleChange}
+                    type="radio"
+                    name={this.props.question.id}
+                    value={75}
+                />
+                <input onChange={this.props.handleChange}
+                    type="radio"
+                    name={this.props.question.id}
+                    value={100}
+                />
+                </form>
         )
     }
+
 }
 
 
 export default QuizForm
+
+        // let copyQuestions = []
+        // let newCopy = copyQuestions.push(name)
+        // let copyAnswers = []
+        // copyAnswers.push(value)
+
+        // if (copyQuestions.length === 21) {
+        //     this.setState({
+        //         questions: [...this.state, newCopy],
+        //         answers: [...this.state, copyAnswers]
+        //     })
+        // }
+        // console.log(newCopy)
+        
+        // this.setState({
+        //     name: [...this.state.name, name]    
+        // })

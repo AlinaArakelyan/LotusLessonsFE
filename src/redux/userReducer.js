@@ -15,7 +15,7 @@ const initialState = {
         return {
           ...state,
           user: []
-        }` `
+        }
       
       case "UPDATE_USER":
         return {
