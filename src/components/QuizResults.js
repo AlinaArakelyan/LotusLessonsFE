@@ -3,7 +3,9 @@ import React from 'react'
 class QuizResults extends React.Component{
     render() {
         return (
-                "Hi from Quiz Result"
+            <div>
+                <div>{this.props.toString()}</div>
+            </div>
             )
         }
 }

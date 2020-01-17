@@ -12,6 +12,7 @@ class QuizContainer extends React.Component{
     }
 
     state = {
+        done: false,
         question: [],
         answer: []
     }
@@ -46,26 +47,30 @@ class QuizContainer extends React.Component{
           })
             .then(response => response.json())
             .then(response => {
-                console.log(response)
+                this.setState({
+                done: true
+            })
             });
-
+            // debugger
     }
-
-
-
 
 
     render() {
         return (
             <container>
-                <h5>For each of the following statements choose on a scale of 1 - 5, one strongly disagree and 5 being strongly agree, and 3 being neutral. </h5>
-                <div className="quiz">
-                <div > {this.props.questions.questions.map(question => <QuizForm question={question} key={question.id} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />)}
+                <div>
+                    <h5>For each of the following statements choose on a scale of 1 - 5, one strongly disagree and 5 being strongly agree, and 3 being neutral. </h5>
+                    {!this.state.done? 
+                     <div id="quiz"className="quiz">
+                        <div > {this.props.questions.questions.map(question => <QuizForm question={question} key={question.id} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />)}
                         <input form="quiz-form" type="submit" value="Submit" />
-                        </div>
-                </div> 
-                <div className="results">
+                         </div>
+                     </div> 
+                : 
+                <div id="result" className="">
                     <QuizResults />
+                    {/* {if (this.state.done === true) { this.props.questions.questions.map(question => <QuizResults question={question} key={question.id} />) } */}
+                    </div> }
                 </div>
             </container>
         )
