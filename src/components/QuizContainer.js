@@ -26,7 +26,6 @@ class QuizContainer extends React.Component{
                 answer: [...this.state.answer, value]
             })
         }
-            
     }
     
 
@@ -34,7 +33,6 @@ class QuizContainer extends React.Component{
         evt.preventDefault()
         const questions = this.state.question
         const answers = this.state.answer
-        debugger
         fetch(`http://localhost:3000/questions/answers`, {
             method: "PATCH",
             headers: {
@@ -59,11 +57,16 @@ class QuizContainer extends React.Component{
 
     render() {
         return (
-            <container className="quiz">
-            <h5>For each of the following statements choose on a scale of 1 - 5, one strongly disagree and 5 being strongly agree, and 3 being neutral. </h5>
-                <div> {this.props.questions.questions.map(question => <QuizForm question={question} key={question.id} handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>)}
-                    <input form="quiz-form" type="submit" value="Submit" />
+            <container>
+                <h5>For each of the following statements choose on a scale of 1 - 5, one strongly disagree and 5 being strongly agree, and 3 being neutral. </h5>
+                <div className="quiz">
+                <div > {this.props.questions.questions.map(question => <QuizForm question={question} key={question.id} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />)}
+                        <input form="quiz-form" type="submit" value="Submit" />
+                        </div>
                 </div> 
+                <div className="results">
+                    <QuizResults />
+                </div>
             </container>
         )
     }
