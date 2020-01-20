@@ -57,19 +57,19 @@ class QuizContainer extends React.Component{
 
     render() {
         return (
-            <container>
+            <container style={{position: "relative"}}>
                 <div>
                     <h5>For each of the following statements choose on a scale of 1 - 5, one strongly disagree and 5 being strongly agree, and 3 being neutral. </h5>
                     {!this.state.done? 
-                     <div id="quiz"className="quiz">
+                     <div className="quiz">
                         <div > {this.props.questions.questions.map(question => <QuizForm question={question} key={question.id} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />)}
                         <input form="quiz-form" type="submit" value="Submit" />
                          </div>
                      </div> 
                 : 
-                <div id="result" className="">
-                    <QuizResults />
-                    {/* {if (this.state.done === true) { this.props.questions.questions.map(question => <QuizResults question={question} key={question.id} />) } */}
+                <div className="result">
+                            <div> {this.props.questions.questions.map(question => < QuizResults question={question.chakra} key={question.id} />)}
+                            </div>
                     </div> }
                 </div>
             </container>
