@@ -1,5 +1,5 @@
 import React from 'react'
-import { Line } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 
 class QuizResults extends React.Component{
 
@@ -21,8 +21,12 @@ class QuizResults extends React.Component{
     render() {
         // debugger 
         return (
-            <div>
-                <div>{this.props.question.chakra.name} : {this.props.question.answer}</div>
+            <div className="Chart">
+                <Bar
+                    data={this.props.data}
+                />
+
+                {/* <div>{this.props.question.chakra.name} : {this.props.question.answer}</div> */}
             </div>
             )
         }

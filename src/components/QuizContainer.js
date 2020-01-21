@@ -14,7 +14,8 @@ class QuizContainer extends React.Component{
     state = {
         done: false,
         question: [],
-        answer: []
+        answer: [],
+        chartData: {}
     }
 
     handleChange = (evt) => {
@@ -48,16 +49,29 @@ class QuizContainer extends React.Component{
             .then(response => response.json())
             .then(response => {
                 this.setState({
-                done: true
+                    done: true,
+                    chartData: {
+                        chakras: [this.state.question.chakra.name],
+                        dataset: [this.state.answer],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                            'rgba(255, 159, 64, 0.6)',
+                            'rgba(255, 99, 132, 0.6)'
+                        ]
+                    }
             })
             });
-            // debugger
+
     }
 
 
     render() {
         return (
-            <container style={{position: "relative"}}>
+            <div style={{position: "relative"}}>
                 <div>
                     <h5>For each of the following statements choose on a scale of 1 - 5, one strongly disagree and 5 being strongly agree, and 3 being neutral. </h5>
                     {!this.state.done? 
@@ -67,12 +81,15 @@ class QuizContainer extends React.Component{
                          </div>
                      </div> 
                 : 
-                <div className="result">
-                            <div> {this.props.questions.questions.map(question => < QuizResults question={question.chakra} key={question.id} />)}
-                            </div>
-                    </div> }
+                <div className="chart">
+                            {/* <div> {this.props.questions.questions.map(question => < QuizResults question={question.chakra} key={question.id} />)}
+                            </div> */}
+                            <div> <QuizResults data={this.state.chartData}/></div>
+                            {/* < */}
+                        </div>}
+                    
                 </div>
-            </container>
+            </div>
         )
     }
 }
