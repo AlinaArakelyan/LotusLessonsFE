@@ -16,7 +16,7 @@ class QuizContainer extends React.Component{
         question: [],
         answer: [],
         chartData: {
-            label: [],
+            labels: [],
             datasets: [],
             backgroundColor: []
          }
@@ -75,17 +75,23 @@ class QuizContainer extends React.Component{
                     done: true,     
                     chartData: {
                         // label: chakras,
-                        label: ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"],
-                        dataset: allAns,
+                        labels: ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"],
+                        datasets: [{
+                            data: allAns,
+                            barPercentage: 0.5,
+                            barThickness: 6,
+                            maxBarThickness: 8,
+                            minBarLength: 2,
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.6)',
-                                'rgba(54, 162, 235, 0.6)',
-                                'rgba(255, 206, 86, 0.6)',
-                                'rgba(75, 192, 192, 0.6)',
-                                'rgba(153, 102, 255, 0.6)',
-                                'rgba(255, 159, 64, 0.6)',
-                                'rgba(255, 99, 132, 0.6)'
+                                'rgba(207, 0, 15, 0.6)',
+                                'rgba(255, 165, 0, 0.6)',
+                                'rgba(249, 105, 14, 0.6)',
+                                'rgba(46, 204, 113, 0.6)',
+                                'rgba(25, 181, 254, 0.6)',
+                                'rgba(140, 20, 252, 0.6)',
+                                'rgba(102, 51, 153, 0.6)'
                             ]
+                        }]
 
                     }
                 })
