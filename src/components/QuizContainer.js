@@ -52,16 +52,31 @@ class QuizContainer extends React.Component{
           })
             .then(response => response.json())
             .then(response => {
-                let chakras = response.map(question => question.chakra.name)
+                // let chakras = response.map(question => question.chakra.name)
                 let ans = response.map(question => question.answer)
+                let root = ans.slice(0, 3)
+                let rootAvg = root.reduce((prev, curr) => prev + curr, 0) / root.length
+                let sacral = ans.slice(3, 6)
+                let sacralAvg = sacral.reduce((p, c) => p + c, 0) / sacral.length
+                let solarP = ans.slice(6, 9)
+                let solarAvg = solarP.reduce((p, c) => p + c, 0) / solarP.length
+                let heart = ans.slice(9, 12)
+                let heartAvg = heart.reduce((p, c) => p + c, 0) / heart.length
+                let throat = ans.slice(12, 15)
+                let throatAvg = throat.reduce((p, c) => p + c, 0) / throat.length
+                let thirdEye = ans.slice(15, 18)
+                let thirdEyeAvg = thirdEye.reduce((p, c) => p + c, 0) / thirdEye.length
+                let crown = ans.slice(18, 21)
+                let crownAvg = crown.reduce((p, c) => p + c, 0) / crown.length
+                let allAns = [rootAvg, sacralAvg, solarAvg, heartAvg, throatAvg, thirdEyeAvg, crownAvg]
 
+                // debugger
                 this.setState({
                     done: true,     
                     chartData: {
-                        label: chakras,
-                        dataset: {
-                            data: ans
-                        },
+                        // label: chakras,
+                        label: ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"],
+                        dataset: allAns,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.6)',
                                 'rgba(54, 162, 235, 0.6)',
