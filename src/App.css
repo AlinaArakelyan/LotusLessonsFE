@@ -69,3 +69,21 @@
 .show {
 display: relative;
 }
+
+.chakra{
+  background:#00CED1;
+  border: white 2px solid;
+  width:700px;
+  height:1000px;
+  padding: 50px;
+  overflow: auto;
+  margin: 20px auto;
+  background-color: rgba(255,255,255, 0.8);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  z-index: 1;
+  color: black;
+}

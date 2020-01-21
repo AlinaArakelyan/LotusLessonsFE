@@ -12,7 +12,7 @@ class ChakraContainer extends React.Component{
     
     render() {
         return (
-        <div>
+        <div className="chakra">
             <h1>All Chakras</h1>
             <div>
                 {this.props.chakras.map(chakra => <Chakra chakra={chakra} key={chakra.id} />)}

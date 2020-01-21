@@ -7,10 +7,10 @@ class QuizResults extends React.Component{
     render() {
         console.log(this.props.data)
         return (
-            <div class="chart-container">
-                <Bar
-                    data={this.props.data}
-                    options={{
+            <div style={{height: 300, width: 500}} >
+                    <Bar
+                        data={this.props.data}
+                        options={{
                         title:{
                           display:true,
                           text:'Average Chakra Openess',
@@ -22,11 +22,7 @@ class QuizResults extends React.Component{
                         }
                       }}
                 />
-                {/* <Line data={this.props.data} /> */}
-                {/* <Doughnut data={this.props.data} /> */}
-
-                {/* <div>{this.props.question.chakra.name} : {this.props.question.answer}</div> */}
-            </div>
+                </div>
             )
         }
 }

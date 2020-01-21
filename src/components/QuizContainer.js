@@ -78,9 +78,9 @@ class QuizContainer extends React.Component{
                         labels: ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"],
                         datasets: [{
                             data: allAns,
-                            barPercentage: 0.5,
-                            barThickness: 6,
-                            maxBarThickness: 8,
+                            barPercentage: 100,
+                            barThickness: 60,
+                            maxBarThickness: 100,
                             minBarLength: 2,
                             backgroundColor: [
                                 'rgba(207, 0, 15, 0.6)',
@@ -130,10 +130,10 @@ class QuizContainer extends React.Component{
                          </div>
                      </div> 
                 : 
-                <div className="quiz">
+                        <div className="quiz">
                             {/* <div> {this.props.questions.questions.map(question => < QuizResults question={question.chakra} key={question.id} />)}
                             </div> */}
-                            <div> <QuizResults data={this.state.chartData}/></div>
+                            <div style={{ backgroundColor: "#ffffff" }} ><QuizResults data={this.state.chartData}/></div>
             
                         </div>}
                     
