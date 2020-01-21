@@ -19,11 +19,13 @@ class QuizResults extends React.Component{
 
 
     render() {
-        // debugger 
+        console.log(this.props.data)
         return (
             <div className="Chart">
                 <Bar
                     data={this.props.data}
+                    options={{
+                    }}
                 />
 
                 {/* <div>{this.props.question.chakra.name} : {this.props.question.answer}</div> */}

@@ -15,7 +15,11 @@ class QuizContainer extends React.Component{
         done: false,
         question: [],
         answer: [],
-        chartData: {}
+        chartData: {
+            label: [],
+            datasets: [],
+            backgroundColor: []
+         }
     }
 
     handleChange = (evt) => {
@@ -48,23 +52,47 @@ class QuizContainer extends React.Component{
           })
             .then(response => response.json())
             .then(response => {
+                let chakras = response.map(question => question.chakra.name)
+                let ans = response.map(question => question.answer)
+
                 this.setState({
-                    done: true,
+                    done: true,     
                     chartData: {
-                        chakras: [this.state.question.chakra.name],
-                        dataset: [this.state.answer],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.6)',
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(255, 206, 86, 0.6)',
-                            'rgba(75, 192, 192, 0.6)',
-                            'rgba(153, 102, 255, 0.6)',
-                            'rgba(255, 159, 64, 0.6)',
-                            'rgba(255, 99, 132, 0.6)'
-                        ]
+                        label: chakras,
+                        dataset: {
+                            data: ans
+                        },
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(255, 99, 132, 0.6)'
+                            ]
+
                     }
-            })
+                })
             });
+        
+        // const createChart = () => {
+        //     this.setState({
+        //         chartData: {
+        //             chakras: [this.state.question.chakra.name],
+        //                 dataset: [this.state.answer],
+        //                     backgroundColor: [
+        //                         'rgba(255, 99, 132, 0.6)',
+        //                         'rgba(54, 162, 235, 0.6)',
+        //                         'rgba(255, 206, 86, 0.6)',
+        //                         'rgba(75, 192, 192, 0.6)',
+        //                         'rgba(153, 102, 255, 0.6)',
+        //                         'rgba(255, 159, 64, 0.6)',
+        //                         'rgba(255, 99, 132, 0.6)'
+        //                     ]
+        //         }
+        //     })
+        // }
 
     }
 
@@ -81,11 +109,11 @@ class QuizContainer extends React.Component{
                          </div>
                      </div> 
                 : 
-                <div className="chart">
+                <div className="quiz">
                             {/* <div> {this.props.questions.questions.map(question => < QuizResults question={question.chakra} key={question.id} />)}
                             </div> */}
                             <div> <QuizResults data={this.state.chartData}/></div>
-                            {/* < */}
+            
                         </div>}
                     
                 </div>
