@@ -97,24 +97,6 @@ class QuizContainer extends React.Component{
                 })
             });
         
-        // const createChart = () => {
-        //     this.setState({
-        //         chartData: {
-        //             chakras: [this.state.question.chakra.name],
-        //                 dataset: [this.state.answer],
-        //                     backgroundColor: [
-        //                         'rgba(255, 99, 132, 0.6)',
-        //                         'rgba(54, 162, 235, 0.6)',
-        //                         'rgba(255, 206, 86, 0.6)',
-        //                         'rgba(75, 192, 192, 0.6)',
-        //                         'rgba(153, 102, 255, 0.6)',
-        //                         'rgba(255, 159, 64, 0.6)',
-        //                         'rgba(255, 99, 132, 0.6)'
-        //                     ]
-        //         }
-        //     })
-        // }
-
     }
 
 
@@ -131,8 +113,6 @@ class QuizContainer extends React.Component{
                      </div> 
                 : 
                         <div className="quiz">
-                            {/* <div> {this.props.questions.questions.map(question => < QuizResults question={question.chakra} key={question.id} />)}
-                            </div> */}
                             <div style={{ backgroundColor: "#ffffff" }} ><QuizResults data={this.state.chartData}/></div>
             
                         </div>}
