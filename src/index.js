@@ -10,13 +10,15 @@ import thunk from 'redux-thunk';
 import userReducer from './redux/userReducer.js';
 import questionsReducer from './redux/questionReducer.js';
 import chakraReducer from './redux/chakraReducer.js';
+import poseReducer from './redux/poseReducer.js';
 
 
 
 const rootReducer = combineReducers({
     currentUser: userReducer,
     allQuestions: questionsReducer,
-    allChakras: chakraReducer
+    allChakras: chakraReducer,
+    allPoses: poseReducer
 })
 
 

@@ -29,6 +29,17 @@ export const getAllQuestions = () => {
   } 
 }
 
+export const getAllPoses = () => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/poses`)
+    .then(resp => resp.json())
+    .then(arrayOfPoses => {
+      dispatch(setPoses(arrayOfPoses))
+    })
+  } 
+}
+
+
 export const addUserBE = (name) => {
   console.log("from addUserBE", name)
   return (dispatch) => {
@@ -71,6 +82,13 @@ export const setChakras = (arrayOfChakras) => {
     type: "SET_CHAKRAS",
     payload: arrayOfChakras
 
+  }
+}
+
+export const setPoses = (arrayOfPoses) => {
+  return {
+    type: "SET_POSES",
+    payload: arrayOfPoses
   }
 }
 

@@ -87,3 +87,13 @@ display: relative;
   z-index: 1;
   color: black;
 }
+
+.pic{
+  height: 50%;
+  width: 50%;
+}
+
+/* .poses{
+  background-image: url(https://cdn.shopify.com/s/files/1/1278/4017/products/A9107515.png?v=1541530314);
+  background-size: relative;
+} */

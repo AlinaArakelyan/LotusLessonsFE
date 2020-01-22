@@ -10,6 +10,8 @@ class Nav extends Component {
             <Link to="/chakras">Chakra Info</Link>
               |
             <Link to="/Quiz">Quiz</Link>
+              |
+            <Link to="/Yoga">Yoga</Link>
           </div>
         );
       }

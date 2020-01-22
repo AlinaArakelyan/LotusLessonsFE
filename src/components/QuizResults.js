@@ -12,19 +12,9 @@ class QuizResults extends React.Component{
 
   handleClick = (e, chart) => {
       let selected = chart["0"]._index
-      // generatePath("/chakras/:id"){
-      //   id: 1
-      // }
-        // const activeChakra = Bar.getElementAtEvent()
-        //instead of set state redirect to the URL of the chakra, by passing dynamically index plus one to get chakra ID 
-        //look up props.history.push(**pass the path)
-        // step 1. import withrouter from react router
-        // step 2. console log props make sure you have access to correct props
-        // step 3. then see how to structure the stuff 
       let id = parseInt(selected + 1)
       console.log(id)
       this.props.history.push(`/chakras/${id}`)
-    
     }
 
     render() {

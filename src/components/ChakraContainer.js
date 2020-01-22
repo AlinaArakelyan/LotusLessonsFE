@@ -2,6 +2,8 @@ import React from 'react';
 import Chakra from './Chakra';
 import { connect } from 'react-redux';
 import { getAllChakras } from "../redux/actions"
+import { Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router'
 
 
 class ChakraContainer extends React.Component{
@@ -10,6 +12,7 @@ class ChakraContainer extends React.Component{
         this.props.getAllChakras()
     }
     
+
     render() {
         return (
         <div className="chakra">
@@ -23,7 +26,8 @@ class ChakraContainer extends React.Component{
 
 const getInfo = (state) => {
     return {
-        chakras: state.allChakras.chakras
+        chakras: state.allChakras.chakras,
+        poses: state.allPoses.poses
     }
 }
 

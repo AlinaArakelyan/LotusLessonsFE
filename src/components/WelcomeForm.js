@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addUser, addUserBE } from '../redux/actions'
+import { addUser, addUserBE } from '../redux/actions';
+import { withRouter } from "react-router";
 
 
 class WelcomeForm extends React.Component{
@@ -19,6 +20,7 @@ class WelcomeForm extends React.Component{
         evt.preventDefault()
         this.props.addUser(this.state)
         this.props.addUserBE(this.state.user)
+        this.props.history.push(`/quiz`)
       }
     
     
@@ -52,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(null, { addUserBE, addUser, mapDispatchToProps })(WelcomeForm)
+export default connect(null, { addUserBE, addUser, mapDispatchToProps })(withRouter(WelcomeForm))

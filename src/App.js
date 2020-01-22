@@ -8,6 +8,8 @@ import NavBar from './components/Nav.js'
 import { removeUser } from './redux/actions'
 import { connect } from 'react-redux'
 import QuizContainer from './components/QuizContainer';
+import Chakra from './components/Chakra'
+import YogaContainer from './components/YogaContainer'
 
 class App extends React.Component{
   render() {
@@ -18,7 +20,8 @@ class App extends React.Component{
           <Route exact path="/" render={() => <Welcome onClick={this.props.removeUser} />} />
           <Route exact path="/chakras" component={ChakraContainer} />
           <Route exact path="/quiz" component={QuizContainer} />
-          {/* <Route exact path='/chakras/${id}' component={Chakra} /> */}
+          <Route exact path='/chakras/:id' component={Chakra} />
+          <Route exact path='/yoga' component={YogaContainer} />
         </Switch>
 
       </div>
