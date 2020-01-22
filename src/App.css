@@ -46,13 +46,13 @@
 
 .quiz{
   background:white;
-  border: black 2px solid;
+  border:white 2px solid;
   width:1000px;
   height:550px;
   padding: 50px;
   overflow: auto;
   margin: 20px auto;
-  background-color: rgba(255,255,255, 0.6);
+  background-color: rgba(255,255,255, 0.7);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -5,13 +5,11 @@ const initialState = {
   const userReducer = (state = initialState, action) => {
     switch (action.type) {
       case "ADD_USER":
-        console.log(state)
         return {
           ...state,
-          user: action.payload.user
+          user: action.payload
         }
       case "CLEAR_USER":
-        console.log(state)
         return {
           ...state,
           user: []

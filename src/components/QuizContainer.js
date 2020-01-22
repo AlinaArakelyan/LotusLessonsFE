@@ -90,6 +90,15 @@ class QuizContainer extends React.Component{
                                 'rgba(25, 181, 254, 0.6)',
                                 'rgba(140, 20, 252, 0.6)',
                                 'rgba(102, 51, 153, 0.6)'
+                            ],
+                            hoverBackgroundColor: [
+                                'rgba(207, 0, 15, 1)',
+                                'rgba(255, 165, 0, 1)',
+                                'rgba(249, 105, 14, 1)',
+                                'rgba(46, 204, 113, 1)',
+                                'rgba(25, 181, 254, 1)',
+                                'rgba(140, 20, 252, 1)',
+                                'rgba(102, 51, 153, 1)'
                             ]
                         }]
 

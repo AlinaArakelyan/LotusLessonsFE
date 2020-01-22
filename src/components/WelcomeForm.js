@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../redux/actions'
+import { addUser, addUserBE } from '../redux/actions'
 
 
 class WelcomeForm extends React.Component{
@@ -16,9 +16,9 @@ class WelcomeForm extends React.Component{
       }
     
     handleSubmit = (evt) => {
-        console.log(this.props.allQuestions)
         evt.preventDefault()
         this.props.addUser(this.state)
+        this.props.addUserBE(this.state.user)
       }
     
     
@@ -44,6 +44,12 @@ class WelcomeForm extends React.Component{
 
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        users: () => { dispatch(addUserBE) }
+    }
+}
 
 
-export default connect(null, { addUser })(WelcomeForm)
+
+export default connect(null, { addUserBE, addUser, mapDispatchToProps })(WelcomeForm)
