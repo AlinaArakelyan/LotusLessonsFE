@@ -9,6 +9,16 @@ export const getAllChakras = () => {
   }
 }
 
+export const getSingleChakra = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/chakras/${id}`)
+      .then(resp => resp.json())
+      .then(singleChakra => {
+        dispatch(setChakra(singleChakra))
+      })
+  }
+}
+
 export const getAllQuestions = () => {
   return (dispatch) => {
     fetch(`http://localhost:3000/questions`)
@@ -60,6 +70,14 @@ export const setChakras = (arrayOfChakras) => {
   return {
     type: "SET_CHAKRAS",
     payload: arrayOfChakras
+
+  }
+}
+
+export const setChakra = (singleChakra) => {
+  return {
+    type: "SET_CHAKRA",
+    payload: singleChakra
 
   }
 }

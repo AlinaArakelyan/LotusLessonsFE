@@ -9,6 +9,12 @@ const chakraReducer = (state = initialState, action) => {
         ...state,
         chakras: action.payload
       }
+    
+    case "SET_CHAKRA":
+      return {
+        ...state,
+        chakra: action.payload
+      }
       
       default:
         return state

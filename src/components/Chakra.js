@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getSingleChakra } from "../redux/actions"
 
 const Chakra = ({ chakra }) => (
-    
-    // <div className="App" >
+        
     <div>
         <h4>Chakra: {chakra.name} </h4> <img src={chakra.symbol} className="App-logo"></img> {chakra.description}
     </div>
 )
 
-export default Chakra
-
+export default connect(null, {getSingleChakra})(Chakra)

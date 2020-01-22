@@ -18,6 +18,7 @@ class App extends React.Component{
           <Route exact path="/" render={() => <Welcome onClick={this.props.removeUser} />} />
           <Route exact path="/chakras" component={ChakraContainer} />
           <Route exact path="/quiz" component={QuizContainer} />
+          {/* <Route exact path='/chakras/${id}' component={Chakra} /> */}
         </Switch>
 
       </div>

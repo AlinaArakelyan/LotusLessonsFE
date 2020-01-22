@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getAllQuestions } from '../redux/actions';
 import QuizResults from "./QuizResults";
 import QuizForm from "./QuizForm";
+import { withRouter, generatePath } from "react-router";
 
 
 class QuizContainer extends React.Component{
@@ -70,18 +71,31 @@ class QuizContainer extends React.Component{
                 let crownAvg = crown.reduce((p, c) => p + c, 0) / crown.length
                 let allAns = [rootAvg, sacralAvg, solarAvg, heartAvg, throatAvg, thirdEyeAvg, crownAvg]
 
+                let chakras = ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"]
+
+                // let listChakras = (chakra) => (chakra => generatePath(`/chakras/${chakra}`), {
+                //     chakra: chakra
+                // })
+
+                // let findChakra = (event) => {
+                //     console.log(event)
+                // }
+                    
                 // debugger
                 this.setState({
                     done: true,     
                     chartData: {
                         // label: chakras,
-                        labels: ["Root", "Sacral", "Solar Plexus", "Heart", "Throat", "Third Eye", "Crown"],
+                        labels: chakras,
                         datasets: [{
                             data: allAns,
+                            // id: response.map(question => question.chakra.id),
                             barPercentage: 100,
                             barThickness: 60,
                             maxBarThickness: 100,
                             minBarLength: 2,
+                            // order: allAns.indexOf,
+                            // onClick: this.listChakras,
                             backgroundColor: [
                                 'rgba(207, 0, 15, 0.6)',
                                 'rgba(255, 165, 0, 0.6)',
