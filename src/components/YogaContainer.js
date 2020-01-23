@@ -11,11 +11,10 @@ class YogaContainer extends React.Component{
     
 
     render() {
-        console.log(this.props.poses)
         return (
-        <div className="poses">
-            <h1>Yoga Poses To Help Balance Chakras</h1>
-            <div>
+        <div className="chakra">
+            <h1>Yoga Poses To Help Balance Chakras 🌺</h1>
+                <div>
                     {this.props.poses.map(pose => <Yoga pose={pose} key={pose.id} />)}
             </div>
         </div>

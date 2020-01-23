@@ -89,11 +89,16 @@ display: relative;
 }
 
 .pic{
-  height: 50%;
-  width: 50%;
+  height: 45%;
+  width: 45%;
 }
 
-/* .poses{
-  background-image: url(https://cdn.shopify.com/s/files/1/1278/4017/products/A9107515.png?v=1541530314);
-  background-size: relative;
-} */
+.poses{
+  background-image: url(https://balancedplanetyoga.com/wp-content/uploads/2017/10/9ba44ab01809b3e69c65d387116c5792.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: center;
+  display: center;
+  
+}
