@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 import QuizContainer from './components/QuizContainer';
 import Chakra from './components/Chakra'
 import YogaContainer from './components/YogaContainer'
+import AdviceContainer from './components/AdviceContainer'
 
 class App extends React.Component{
   render() {
@@ -22,6 +23,7 @@ class App extends React.Component{
           <Route exact path="/quiz" component={QuizContainer} />
           <Route exact path='/chakras/:id' component={ChakraContainer} />
           <Route exact path='/yoga' component={YogaContainer} />
+          <Route exact path='/advice' component={AdviceContainer} />
         </Switch>
 
       </div>
