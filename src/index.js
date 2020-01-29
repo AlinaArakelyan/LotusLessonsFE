@@ -11,14 +11,15 @@ import userReducer from './redux/userReducer.js';
 import questionsReducer from './redux/questionReducer.js';
 import chakraReducer from './redux/chakraReducer.js';
 import poseReducer from './redux/poseReducer.js';
-
+import adviceReducer from './redux/adviceReducer.js';
 
 
 const rootReducer = combineReducers({
     currentUser: userReducer,
     allQuestions: questionsReducer,
     allChakras: chakraReducer,
-    allPoses: poseReducer
+    allPoses: poseReducer,
+    allAdvice: adviceReducer
 })
 
 

@@ -8,7 +8,6 @@ import NavBar from './components/Nav.js'
 import { removeUser } from './redux/actions'
 import { connect } from 'react-redux'
 import QuizContainer from './components/QuizContainer';
-import Chakra from './components/Chakra'
 import YogaContainer from './components/YogaContainer'
 import AdviceContainer from './components/AdviceContainer'
 

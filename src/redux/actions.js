@@ -39,6 +39,15 @@ export const getAllPoses = () => {
   } 
 }
 
+export const getAllAdvice = () => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/advices`)
+      .then(resp => resp.json())
+      .then(arrayOfAdvice => {
+        dispatch(setAdvice(arrayOfAdvice))
+      })
+  }
+}
 
 export const addUserBE = (name) => {
   console.log("from addUserBE", name)
@@ -104,5 +113,12 @@ export const setQuestions = (arrayOfQuestions) => {
   return {
     type: "SET_QUESTIONS",
     payload: arrayOfQuestions
+  }
+}
+
+export const setAdvice = (arrayOfAdvice) => {
+  return {
+    type: "SET_ADVICE",
+    payload: arrayOfAdvice
   }
 }

@@ -1,5 +1,5 @@
 const initialState = {
-    chakras: [{id: 1, name: "root"}]
+    chakras: []
   }
   
 const chakraReducer = (state = initialState, action) => {

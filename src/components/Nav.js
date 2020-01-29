@@ -12,6 +12,8 @@ class Nav extends Component {
             <Link to="/Quiz">Quiz</Link>
               |
             <Link to="/Yoga">Yoga</Link>
+              |
+            <Link to="/Advice">Advice</Link>
           </div>
         );
       }

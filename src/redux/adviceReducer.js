@@ -20,4 +20,4 @@ const adviceReducer = (state = initialState, action) => {
     }
 }
 
-export default adviceReducer
+export default adviceReducer;
