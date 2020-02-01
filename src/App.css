@@ -102,3 +102,33 @@ display: relative;
   display: center;
   
 }
+
+.resize{
+  height: 30px;
+  width: 30px;
+  position: left;
+  margin: left;
+}
+
+.bigBox{
+  height: 50px;
+  width: 50px;
+}
+
+.advice{
+  background:white;
+  border:white 2px solid;
+  width:400px;
+  height:550px;
+  padding: 50px;
+  overflow: auto;
+  margin: 20px auto;
+  background-color: rgba(255,255,255, 0.9);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  z-index: 1;
+  color: black;
+}

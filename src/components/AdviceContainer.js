@@ -9,11 +9,13 @@ class AdviceContainer extends React.Component{
         this.props.getAllAdvice()
     }
 
+    //create a function to filter by chakra name and then pass that down as props to advice and call it in advice
+
     render() {
-        console.log(this.props.advice)
+        console.log(this.props)
             return (
                 <div>
-                    <div>
+                    <div className="advice">
                         {this.props.advice.map(advice => <Advice advice={advice} key={advice.id} />)}
                     </div>
                 </div>
