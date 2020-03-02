@@ -1,7 +1,7 @@
 
 export const getAllChakras = () => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/chakras`, {mode: 'cors'})
+    fetch(`https://serene-crag-79895.herokuapp.com/chakras`, {mode: 'cors'})
       .then(resp => resp.json())
       .then(arrayOfChakras => {
         dispatch(setChakras(arrayOfChakras))
@@ -21,7 +21,7 @@ export const getSingleChakra = (id) => {
 
 export const getAllQuestions = () => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/questions`)
+    fetch(`https://serene-crag-79895.herokuapp.com/questions`)
     .then(resp => resp.json())
     .then(arrayOfQuestions => {
       dispatch(setQuestions(arrayOfQuestions))
@@ -31,7 +31,7 @@ export const getAllQuestions = () => {
 
 export const getAllPoses = () => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/poses`)
+    fetch(`https://serene-crag-79895.herokuapp.com/poses`)
     .then(resp => resp.json())
     .then(arrayOfPoses => {
       dispatch(setPoses(arrayOfPoses))
@@ -41,7 +41,7 @@ export const getAllPoses = () => {
 
 export const getAllAdvice = () => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/advices`)
+    fetch(`https://serene-crag-79895.herokuapp.com/advices`)
       .then(resp => resp.json())
       .then(arrayOfAdvice => {
         dispatch(setAdvice(arrayOfAdvice))
@@ -52,7 +52,7 @@ export const getAllAdvice = () => {
 export const addUserBE = (name) => {
   console.log("from addUserBE", name)
   return (dispatch) => {
-    fetch('http://localhost:3000/users',{
+    fetch('https://serene-crag-79895.herokuapp.com/users',{
            method:'POST',
            headers: { 
                'Content-type': 'application/json',

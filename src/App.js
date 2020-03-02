@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ChakraContainer from './components/ChakraContainer.js';
 import Welcome from './components/Welcome.js';
-import { Route, Switch } from 'react-router'
+import { Switch, Route } from 'react-router-dom';
 import NavBar from './components/Nav.js'
 import { removeUser } from './redux/actions'
 import { connect } from 'react-redux'
@@ -15,6 +14,7 @@ class App extends React.Component{
   render() {
     return (
       <div className="App">
+        {/* <Router> */}
         <NavBar />
         <Switch>
           <Route exact path="/" render={() => <Welcome onClick={this.props.removeUser} />} />
@@ -24,6 +24,7 @@ class App extends React.Component{
           <Route exact path='/yoga' component={YogaContainer} />
           <Route exact path='/advice' component={AdviceContainer} />
         </Switch>
+        {/* </Router> */}
 
       </div>
     )

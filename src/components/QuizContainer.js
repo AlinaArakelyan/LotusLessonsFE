@@ -39,7 +39,7 @@ class QuizContainer extends React.Component{
         evt.preventDefault()
         const questions = this.state.question
         const answers = this.state.answer
-        fetch(`http://localhost:3000/questions/answers`, {
+        fetch(`https://serene-crag-79895.herokuapp.com/questions/answers`, {
             method: "PATCH",
             headers: {
               "Accept": "application/json",
