@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/LotusLessonsFE/precache-manifest.a4522ddc2c23a2be8049a8cd4b211177.js"
+  "/LotusLessonsFE/precache-manifest.c36010d5d44a3d757c0cfa9203d32526.js"
 );
 
 self.addEventListener('message', (event) => {
