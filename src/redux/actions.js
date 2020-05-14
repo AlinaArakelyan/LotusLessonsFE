@@ -9,15 +9,15 @@ export const getAllChakras = () => {
   }
 }
 
-export const getSingleChakra = (id) => {
-  return (dispatch) => {
-    fetch(`http://localhost:3000/chakras/${id}`)
-      .then(resp => resp.json())
-      .then(singleChakra => {
-        dispatch(setChakra(singleChakra))
-      })
-  }
-}
+// export const getSingleChakra = (id) => {
+//   return (dispatch) => {
+//     fetch(`http://localhost:3000/chakras/${id}`)
+//       .then(resp => resp.json())
+//       .then(singleChakra => {
+//         dispatch(setChakra(singleChakra))
+//       })
+//   }
+// }
 
 export const getAllQuestions = () => {
   return (dispatch) => {

@@ -12,7 +12,6 @@ class ChakraContainer extends React.Component{
         this.props.getAllChakras()
     }
     
-
     render() {
         return (
         <div className="chakra">
